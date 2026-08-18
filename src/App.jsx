@@ -20,7 +20,13 @@ export default function App() {
   const scrollToContact = () => {
     const contactElem = document.getElementById('contact');
     if (contactElem) {
-      contactElem.scrollIntoView({ behavior: 'smooth' });
+      const navbar = document.querySelector('header');
+      const navHeight = navbar ? navbar.offsetHeight : 88;
+      const elementTop = contactElem.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: Math.max(0, elementTop - navHeight + 1),
+        behavior: 'smooth'
+      });
     }
   };
 

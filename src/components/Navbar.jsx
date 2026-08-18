@@ -11,21 +11,35 @@ export default function Navbar({ onOpenTrackModal, onOpenQuoteForm }) {
       setIsScrolled(window.scrollY > 20);
 
       const sections = ['home', 'about', 'services', 'why-us', 'vision', 'gallery', 'reviews', 'contact'];
-      
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i];
+      const navbar = document.querySelector('header');
+      const navHeight = (navbar ? navbar.offsetHeight : 88) + 30;
+
+      // Bottom of page detection for Contact
+      if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 80) {
+        setActiveSection('contact');
+        return;
+      }
+
+      // If at very top
+      if (window.scrollY < 120) {
+        setActiveSection('home');
+        return;
+      }
+
+      let currentSection = 'home';
+      for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
-          const top = element.offsetTop - 110;
-          if (window.scrollY >= top) {
-            setActiveSection(section);
-            break;
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= navHeight + 80 && rect.bottom >= navHeight - 20) {
+            currentSection = section;
           }
         }
       }
+      setActiveSection(currentSection);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -35,7 +49,15 @@ export default function Navbar({ onOpenTrackModal, onOpenQuoteForm }) {
     const targetId = href.replace('#', '');
     const elem = document.getElementById(targetId);
     if (elem) {
-      elem.scrollIntoView({ behavior: 'smooth' });
+      const navbar = document.querySelector('header');
+      const navHeight = navbar ? navbar.offsetHeight : 88;
+      const elementTop = elem.getBoundingClientRect().top + window.pageYOffset;
+      const targetScroll = targetId === 'home' ? 0 : Math.max(0, elementTop - navHeight + 1);
+
+      window.scrollTo({
+        top: targetScroll,
+        behavior: 'smooth'
+      });
       setActiveSection(targetId);
       if (mobileMenuOpen) setMobileMenuOpen(false);
     }

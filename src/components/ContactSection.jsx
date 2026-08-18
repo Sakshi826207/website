@@ -102,7 +102,7 @@ export default function ContactSection({ onOpenTrackModal }) {
   };
 
   return (
-    <section id="contact" className="py-6 sm:py-8 bg-slate-50/70 text-slate-900 border-b border-slate-200/80 relative overflow-hidden">
+    <section id="contact" className="py-12 sm:py-16 scroll-mt-[88px] bg-slate-50/70 text-slate-900 border-b border-slate-200/80 relative overflow-hidden">
       
       {/* Background Micro Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:32px_32px] opacity-35 pointer-events-none" />
@@ -468,7 +468,7 @@ export default function ContactSection({ onOpenTrackModal }) {
             <div className="bg-white border border-slate-200/90 rounded-2xl p-4 sm:p-5 shadow-xs space-y-3">
               <div className="pb-2 border-b border-slate-100">
                 <span className="text-[10px] font-mono font-bold text-blue-600 uppercase tracking-wider block">WORKSHOP INFORMATION</span>
-                <h4 className="text-sm font-extrabold text-slate-900">Softspera Technology & AG Enterprises</h4>
+                <h4 className="text-sm font-extrabold text-slate-900">AG Enterprises</h4>
               </div>
 
               <div className="space-y-2.5 text-xs text-slate-700 font-medium">

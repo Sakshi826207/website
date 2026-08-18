@@ -23,7 +23,7 @@ export default function TestimonialsSection() {
   }, [activeTab]);
 
   return (
-    <section id="reviews" className="py-6 sm:py-8 bg-slate-50/70 text-slate-900 relative overflow-hidden border-b border-slate-200/80">
+    <section id="reviews" className="py-12 sm:py-16 scroll-mt-[88px] bg-slate-50/70 text-slate-900 relative overflow-hidden border-b border-slate-200/80">
       
       {/* Background Micro Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:32px_32px] opacity-35 pointer-events-none" />

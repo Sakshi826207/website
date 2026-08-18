@@ -56,15 +56,17 @@ export default function LegacySection({ onOpenQuoteForm }) {
             </h1>
 
             {/* Supporting Narrative Paragraphs */}
-            <div className="space-y-3.5 text-slate-600 text-xs sm:text-sm md:text-base leading-relaxed font-normal">
-              <p>
-                Our journey began in 2008, when Mr. Gopal Birajdar founded Anita Electronics with a commitment to honest service and quality repairs.
+            <div className="space-y-4 text-slate-600 text-xs sm:text-sm md:text-base leading-relaxed font-normal">
+              <p className="border-l-2 border-blue-500/40 pl-3.5 sm:pl-4">
+                Our journey began in <span className="font-bold text-blue-600">2008</span>, when <strong className="font-extrabold text-slate-900">Mr. Gopal Birajdar</strong> founded <span className="inline-block font-extrabold text-blue-700 bg-blue-50 border border-blue-200/80 px-2 py-0.5 rounded-md shadow-2xs">Anita Electronics</span> with a firm commitment to <strong className="font-semibold text-slate-900">honest service</strong> and <strong className="font-semibold text-slate-900">quality repairs</strong>.
               </p>
-              <p>
-                Today, as the second generation, we proudly carry that legacy forward through AG Enterprises. Built on years of practical experience and continuous innovation, we specialize in component-level PCB repair for Inverter ACs, Refrigerators, Washing Machines and Microwave Ovens.
+
+              <p className="border-l-2 border-indigo-500/40 pl-3.5 sm:pl-4">
+                Today, as the <span className="font-extrabold text-indigo-700">second generation</span>, we proudly carry that legacy forward through <span className="inline-block font-extrabold text-blue-700 bg-blue-50 border border-blue-200/80 px-2 py-0.5 rounded-md shadow-2xs">AG Enterprises</span>. Built on years of practical experience and continuous innovation, we specialize in <strong className="font-extrabold text-slate-900">component-level PCB repair</strong> for <span className="font-semibold text-slate-800">Inverter ACs, Refrigerators, Washing Machines and Microwave Ovens</span>.
               </p>
-              <p>
-                By combining advanced PCB diagnostics with expert repair techniques, we provide reliable and cost-effective repair solutions that help customers avoid unnecessary complete PCB replacement where repair is technically feasible.
+
+              <p className="border-l-2 border-emerald-500/40 pl-3.5 sm:pl-4">
+                By combining <span className="font-extrabold text-blue-600">advanced PCB diagnostics</span> with <strong className="font-extrabold text-slate-900">expert repair techniques</strong>, we provide reliable and cost-effective repair solutions that help customers <span className="inline-block font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-md shadow-2xs">avoid unnecessary complete PCB replacement</span> where repair is technically feasible.
               </p>
             </div>
 
